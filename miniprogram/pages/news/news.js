@@ -17,9 +17,11 @@ Page({
   
   onLoad:async function (options) {
     let news=await db.collection('news').get();
+    let user=await db.collection('users').doc(app.globalData.id).get();
     var ans=[];
     console.log(news);
     for(var i=0;i<news.data.length;i++){
+      if(news.data[i].group==user.data.info.group)
         ans.unshift(news.data[i]);
     }
     this.setData({

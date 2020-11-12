@@ -113,11 +113,15 @@ Page({
     var that = this;
     let user=await db.collection('users').doc(e.currentTarget.dataset.id2).get()
     let juge=await db.collection('juge').doc(e.currentTarget.dataset.id1).get()
+    var tmp=juge.data.group.person
+    for(var i in tmp){
+      tmp[i].pos='部长'
+    }
     let id=(await db.collection('group').add({
       data:{
         name:juge.data.group.name,
         desc:juge.data.group.desc,
-        person:juge.data.group.person,
+        person:tmp,
         total:juge.data.group.total,
       }
     }))._id;

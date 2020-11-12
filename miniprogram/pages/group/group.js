@@ -23,12 +23,12 @@ Page({
     var group=await db.collection('group').get()
     var ans=[]
     var user=await db.collection('users').doc(app.globalData.id).get()
-    var teamStatus='';
-    var bgcolor='black';
     var teamName='';
     var total=0;
     var id=''
     for(var i=0;i<group.data.length;i++){
+      var teamStatus='';
+      var bgcolor='black';
       if(group.data[i].name==user.data.info.group){
         teamStatus='已加入'
         bgcolor = 'green'
