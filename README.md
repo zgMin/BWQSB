@@ -12,11 +12,11 @@
 
 ## 项目效果截图
 
-![项目截图](图片\项目截图.png)
+![项目截图](https://github.com/zgMin/BWQSB/blob/main/%E5%9B%BE%E7%89%87/%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE.png)
 
-![项目截图2](图片\项目截图2.png)
+![项目截图2](https://github.com/zgMin/BWQSB/blob/main/%E5%9B%BE%E7%89%87/%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE2.png)
 
-![项目截图3](图片\项目截图3.png)
+![项目截图3](https://github.com/zgMin/BWQSB/blob/main/%E5%9B%BE%E7%89%87/%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE3.png)
 
 ## 项目体验小程序二维码
 
