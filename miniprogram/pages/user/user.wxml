@@ -31,7 +31,7 @@
 <view class='form' bindtap='toAdmin'>
  <view class='form-item'>
     <view class='form-item-image'>
-      <image src='cloud://wxproject-6gpwqom7fdf8cec0.7778-wxproject-6gpwqom7fdf8cec0-1304009470/图片/管理 (1).png' style='height: 60rpx;width: 60rpx;'></image>
+      <image src='cloud://wxproject-6gpwqom7fdf8cec0.7778-wxproject-6gpwqom7fdf8cec0-1304009470/图片/管理1.png' style='height: 60rpx;width: 60rpx;'></image>
     </view>
     <view class='form-item-title'>管理者设置</view>
     <view class="navigator-arrow" style='margin-left: 130rpx;'></view>
