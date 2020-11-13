@@ -23,7 +23,7 @@
 
 ## 项目体验小程序二维码
 
-
+![图片1.png](https://i.loli.net/2020/11/13/dwObU9WVe3sCDTt.png)
 
 ## 部署教程
 
