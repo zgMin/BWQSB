@@ -23,10 +23,10 @@ Page({
     token: wx.getStorageSync('token'),
     status: 2,
     actionSheetHidden: true,
-    actionSheetItems: ['签到', '消息','场地申请'],
+    actionSheetItems: ['签到', '消息', '场地申请'],
     items: [],
-    title:'',
-    news:''
+    title: '',
+    news: ''
   },
   onLoad() {
     var that = this;
@@ -36,8 +36,16 @@ Page({
     this.init();
   },
   async init() {
+    //获取用户openId，通过在数据库中临时创建一条记录来获取
+
+    await db.collection('getId').add({data:{}})
+    let getId=await db.collection('getId').get()
+    console.log(getId)
+    app.globalData.openid=getId.data[0]._openid
+    await db.collection('getId').doc(getId.data[0]._id).remove({})
     //1. 从用户集合中取出当前用户信息
-    let result = await db.collection('users').get();
+    let result = await db.collection('users').where({ _openid: app.globalData.openid }).get();
+    console.log(result)
     if (result.data.length == 0) {
       // 当前用户第一次登录，集合中无用户信息，插入当前用户信息记录，并在全局存储docId
       wx.hideLoading();
@@ -87,7 +95,7 @@ Page({
   toContest() {
     wx.showToast({
       title: '待开发',
-      icon:'loading'
+      icon: 'loading'
     })
     return;
     wx.navigateTo({
@@ -102,7 +110,7 @@ Page({
   toAffair() {
     wx.showToast({
       title: '待开发',
-      icon:'loading'
+      icon: 'loading'
     })
     return;
     wx.navigateTo({
@@ -131,10 +139,10 @@ Page({
       showModal: true
     })
   },
-  bind2:function(e){
+  bind2: function (e) {
     wx.showToast({
       title: '待开发',
-      icon:'loading'
+      icon: 'loading'
     })
     return;
   },
@@ -161,14 +169,14 @@ Page({
    */
   ok: async function () {
     var that = this
-    if(that.data.title==''){
+    if (that.data.title == '') {
       wx.showToast({
         title: '标题为空',
         icon: 'none',
       })
       return;
     }
-    if(that.data.news==''){
+    if (that.data.news == '') {
       wx.showToast({
         title: '内容为空',
         icon: 'none',
@@ -191,16 +199,16 @@ Page({
         news: that.data.news,
         name: user.data.info.name,
         group: user.data.info.group,
-        date:curtime.substring(0,10)
+        date: curtime.substring(0, 10)
       },
       success() {
         that.setData({
           showModal: false
         }),
-         wx.showToast({
-           title: '发布成功',
-           icon:'success'
-         })
+          wx.showToast({
+            title: '发布成功',
+            icon: 'success'
+          })
       }
     })
   }

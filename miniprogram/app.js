@@ -41,7 +41,7 @@ App({
   globalData: {
     id:null,
     qrid:null,
-    oepnid:null,
-	version:''
+    openid:null,
+    version:1.07,
   }
 })

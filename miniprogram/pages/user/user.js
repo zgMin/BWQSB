@@ -17,7 +17,7 @@ Page({
   onLoad: async function (options) {
     
     this.setData({
-      result:await db.collection("users").get()
+      result:await db.collection("users").where({_openid:app.globalData.openid}).get()
     })
     var result = this.data.result;
     if(result.data.length!=0){
