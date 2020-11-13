@@ -37,7 +37,7 @@ GitHub链接：https://github.com/zgMin/BWQSB
 
 目录选择app.js所在文件夹
 
-APPID可使用自己的，也可以使用wxd0f619d5a474e603免去数据库的配置
+APPID填自己的，开通云开发之后进行配置
 
 ### 部署云函数
 
