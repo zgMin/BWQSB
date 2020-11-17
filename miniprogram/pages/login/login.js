@@ -22,7 +22,7 @@ Page({
   },
   async init() {
     //1. 从用户集合中取出当前用户信息
-    let result = await db.collection('users').get();
+    let result = await db.collection('users').where(app.globalData.openid).get();
     console.log('result:', result)
     if (result.data.length == 0) {
         // 当前用户第一次登录，集合中无用户信息，插入当前用户信息记录，并在全局存储docId

@@ -23,7 +23,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: async function (options) {
-    let result = await db.collection('users').get();
+    let result = await db.collection('users').where({
+        _openid:app.globalData.openid
+    }).get();
+    console.log(app.globalData.openid)
     console.log('result:', result)
     this.setData({
       index: result.data[0].info.sex,
