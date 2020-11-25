@@ -14,7 +14,6 @@
     "pages/login/login",
     "pages/user/setting/setting",
     "pages/user/setting/info/info",
-    "pages/user/setting/imgset/imgset",
     "pages/user/admin/admin",
     "pages/user/admin/applyGroup/applyGroup",
     "pages/user/admin/applyRoom/applyRoom",
@@ -53,5 +52,4 @@
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"
-
 }

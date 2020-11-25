@@ -14,8 +14,21 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: async function (options) {
+  onLoad:function (options) {
     
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: async function () {
     this.setData({
       result:await db.collection("users").where({_openid:app.globalData.openid}).get()
     })
@@ -32,22 +45,6 @@ Page({
         url: 'pages/login/login',
       })
     }
-    
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
   },
 
   /**
